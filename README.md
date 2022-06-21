@@ -4,87 +4,83 @@
 
 # 1. Set-up
 
-Start by downloading this repository. If you already use git, you can use the
-following command to clone this repository to your local machine:
+Start by downloading this repository. If you already use `git`, you can clone the repository to your local machine:
 
 ```
-git clone https://github.com/...
+git clone https://github.com/MalloryWittwer/napari-workshop.git
 ```
 
-If you don't already use git, you can download the whole repository as a zip
-file, which you can then unzip on your computer.
+If you don't already use `git`, you can download [the repository](https://github.com/MalloryWittwer/napari-workshop.git) as a zip
+file, and then unzip it on your computer.
 
-[Image of how to do that]
+[Image - Downloading this repository]('resources\download_code.png')
 
-After that, you should navigate to the `napari-workshop` directory from the command line.
+After that, open a terminal window.
+
+---
+**Windows**: Open the `Anaconda Prompt` from your start menu.
+
+**Mac OS**: Open `Terminal` (tip: search for it using `cmd` + `space`).
+
+**Linux**: Open your terminal application.
+
+---
+    
+
+Navigate to the `napari-workshop` directory from the command line using the `cd` command. For example:
 
 ```
-cd napari-training-course
+cd ~/Downloads/napari-training-course
 ```
 
 ## Setting up your environment
 
-It is highly recommended to install it in a dedicated Python environment so to avoid that it interferes with other Python projects you may have.
-
-You should already have downloaded and installed Anaconda. If that is not the case, [do it now]().
-
-1. Open your terminal.
-	- **Windows**: Open the "Anaconda Prompt" from your start menu
-	- **Mac OS**: Open Terminal (you can search for it in spotlight - cmd + space)
-	- **Linux**: Open your terminal application
-
-2. Create a new environment from the command line:
+We will install `napari` in a dedicated Python environment to avoid that it interferes with other Python projects you may have. To create a new environment form the command line, run:
 
 ```bash
-conda create -n napari-tutorial python=3.9
+conda create -y -n napari-tutorial -c conda-forge python=3.9
 ```
 
-3. Activate the environment:
+Then, activate the environment using:
 
 ```bash
 conda activate napari-tutorials
 ```
 
-You should now see `(napari-tutorials)` on the left of your command prompt, which indicates that your environement is active.
+You should now see `(napari-tutorials)` on the left of your command prompt, which indicates that your new environement (named *napari-tutorials*) is active.
 
-4. Napari can be installed like any other Python library: via `pip` or `conda`.Install napari and a few other libraries:
+Run the following commands to install `napari`, `scikit-image`, and `Jupyter notebooks`:
 
 ```
-pip install "napari[all]" scikit-image
+pip install "napari[all]" scikit-image notebook
 ```
 
-5. If the process ran smoothly, you should be all set. To verify that your installation is working, try opening the Napari viewer by typing:
+If the process ran smoothly, you should be all set. To verify that your installation is working, try opening the Napari viewer by typing:
 
 ```bash
 napari
 ```
 
-This should launch an empty napari viewer in a separate window.
+This should launch an empty `napari` viewer in a separate window. It may take up to two minutes for the window to show up the first time you launch this command.
 
-
-
-
-6. You can open a jupyter notebook in your browser by typing:
+You should be able to open a `Jupyter notebook` from your terminal by typing:
 
 ```bash
 jupyter notebook
 ```
 
-Congratulations! You are all set. You can start by following our [tutorial]() or having a look at our [toolbox]().
+Once the Jupyter Notebook opens in your web browser, you should see the following:
+
+[Screenshot of the jupyter root]()
+
+- `/toolbox`
+- `Napari_Guide_Tutorial.ipynb` => example tutorial for using napari for watershed.
 
 
-## Spyder
+## Optional: running Jupyter notebooks from Visual Studio Code
 
-Open a new project, select the downloaded directory.
+As an alternative to the web browser, you can also run Jupyter notebooks directly from the VS Code text editor. For this, you should:
+- Install VS Code.
+- Install the Python and Jupyter extensions for VS Code.
+- Select the right Python environment to run the notebook. You can do this by clicking on `Kernel` at the top-right of the notebook.
 
-## VScode
-
-Or select the correct Python interpreter in VS Code by typing `Ctrl` + `P` => `Select Python Interpreter`.
-
-
-We've already prepared this code for you. Try executing [basic.py](./exampls/basic.py) or [basic.ipynb](./examples/basic.ipynb) in the examples folder.
-
-
-## Get inspired by a few examples
-
-Have a look at the `examples` folder, try executing a few to have an idea of how napari works.
